@@ -1,0 +1,38 @@
+[gd_scene load_steps=2 format=3 uid="uid://bghb60q3y01j7"]
+
+[ext_resource type="Script" path="res://Koda/glava.gd" id="1_j8wu7"]
+
+[node name="Glava" type="Node2D"]
+script = ExtResource("1_j8wu7")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Button" type="Button" parent="."]
+offset_left = -216.0
+offset_top = -117.0
+offset_right = 219.0
+offset_bottom = 121.0
+text = "Maturitetna naloga
+TANKIIII"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="Kontrole R" type="TextEdit" parent="."]
+offset_left = -326.0
+offset_top = 155.0
+offset_right = -146.0
+offset_bottom = 272.0
+text = "RDEČI igralec:
+WSAD - Premikanje
+SPACE - Straljanje"
+
+[node name="Kontrole M" type="TextEdit" parent="."]
+offset_left = 148.0
+offset_top = 161.0
+offset_right = 328.0
+offset_bottom = 278.0
+text = "MODRI igralec:
+PUŠČICE - Premikanje
+CTRL - Straljanje"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
