@@ -27,7 +27,6 @@ func _physics_process(delta: float) -> void:
 			queue_free()
 		if collider.is_in_group("igralec2"):
 			queue_free()
-			print("dewd")
 	
 func _on_timer_timeout() -> void:
 	print("end")
