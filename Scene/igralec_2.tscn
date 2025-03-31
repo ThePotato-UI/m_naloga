@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bpj8qiboqjlfg"]
+
+[ext_resource type="Texture2D" uid="uid://cyms0w6eog60w" path="res://Sprites/Tank2.png" id="1_00tf8"]
+[ext_resource type="Script" path="res://Scene/igralec_2.gd" id="1_yau77"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkj2d"]
+size = Vector2(65, 61)
+
+[node name="igralec2" type="CharacterBody2D" groups=["igralec2"]]
+script = ExtResource("1_yau77")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 1.5708
+texture = ExtResource("1_00tf8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.5, -3.5)
+shape = SubResource("RectangleShape2D_hkj2d")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(70, -3)
+
+[node name="Življenje2" type="Area2D" parent="." groups=["Življenje 2"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Življenje2"]
+polygon = PackedVector2Array(37, 32, 43, 28, 44, 24, 44, 9, 44, -15, 43, -32, 41, -36, 35, -38, -24, -38, -29, -36, -32, -30, -32, 24, -31, 31, -24, 32)
+
+[connection signal="area_entered" from="Življenje2" to="." method="_on_življenje_2_area_entered"]

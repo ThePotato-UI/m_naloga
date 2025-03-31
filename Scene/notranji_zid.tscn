@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c51sh4v5ceyuf"]
+
+[ext_resource type="Texture2D" uid="uid://bhelyjplx2rt1" path="res://Sprites/tla.png" id="1_bw4pq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xfajg"]
+size = Vector2(1092, 109)
+
+[node name="StaticBody2D2" type="StaticBody2D" groups=["walls"]]
+
+[node name="NotranjiZid" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(-1.00001, -0.500001)
+scale = Vector2(68.25, 6.8125)
+texture = ExtResource("1_bw4pq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.00002, -0.5)
+shape = SubResource("RectangleShape2D_xfajg")

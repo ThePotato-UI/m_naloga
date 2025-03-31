@@ -1,0 +1,120 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2ckn7dojuwm2"]
+
+[ext_resource type="Texture2D" uid="uid://bhelyjplx2rt1" path="res://Sprites/tla.png" id="1_my8g0"]
+[ext_resource type="PackedScene" uid="uid://ppw8sknillc" path="res://Scene/Igralec_1.tscn" id="2_6qekt"]
+[ext_resource type="PackedScene" uid="uid://bpj8qiboqjlfg" path="res://Scene/igralec_2.tscn" id="3_tyhq5"]
+[ext_resource type="PackedScene" uid="uid://c51sh4v5ceyuf" path="res://Scene/notranji_zid.tscn" id="4_h0syu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pelps"]
+size = Vector2(1618, 40.25)
+
+[node name="Game" type="Node2D"]
+
+[node name="tla" type="Sprite2D" parent="."]
+modulate = Color(0.65834, 0.65834, 0.65834, 1)
+position = Vector2(2, 2)
+scale = Vector2(109.308, 80.1328)
+texture = ExtResource("1_my8g0")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1, 2)
+zoom = Vector2(0.735, 0.605)
+limit_left = 0
+limit_right = 786
+
+[node name="igralec2" parent="." instance=ExtResource("3_tyhq5")]
+position = Vector2(-686, -459)
+rotation = 1.5708
+scale = Vector2(0.992, 1)
+
+[node name="Igralec" parent="." instance=ExtResource("2_6qekt")]
+position = Vector2(703, 455)
+rotation = -1.5708
+scale = Vector2(0.806192, 0.854209)
+
+[node name="walls" type="Node" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="walls" groups=["walls"]]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/StaticBody2D"]
+position = Vector2(-14, 554)
+shape = SubResource("RectangleShape2D_pelps")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="walls" groups=["walls"]]
+rotation = -3.14159
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/StaticBody2D4"]
+position = Vector2(-14, 554)
+shape = SubResource("RectangleShape2D_pelps")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="walls" groups=["walls"]]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="walls/StaticBody2D2"]
+position = Vector2(-806, -18)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_pelps")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="walls" groups=["walls"]]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="walls/StaticBody2D3"]
+position = Vector2(808, -7)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_pelps")
+
+[node name="NotranjiZidovi" type="Node" parent="."]
+
+[node name="StaticBody2D2" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
+position = Vector2(520, 329)
+scale = Vector2(1.18676, 0.477894)
+
+[node name="StaticBody2D3" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
+position = Vector2(-297, 620)
+rotation = 1.5708
+scale = Vector2(1.18676, 0.477894)
+
+[node name="StaticBody2D4" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
+position = Vector2(-551, 245)
+rotation = 1.5708
+scale = Vector2(-0.196144, 2.05476)
+
+[node name="StaticBody2D6" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
+position = Vector2(235, -217)
+rotation = -1.5708
+scale = Vector2(-0.230566, -1.88695)
+
+[node name="StaticBody2D5" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
+position = Vector2(200, 88)
+rotation = 1.5708
+scale = Vector2(-0.136683, 5.17454)
+
+[node name="StaticBody2D7" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
+position = Vector2(562, -209)
+rotation = 1.5708
+scale = Vector2(-0.169458, 1.90363)
+
+[node name="StaticBody2D8" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
+position = Vector2(-28, -574)
+rotation = 1.5708
+scale = Vector2(-0.845987, 0.603948)
+
+[node name="StaticBody2D9" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
+position = Vector2(-344, -174)
+rotation = 1.5708
+scale = Vector2(0.0814273, 2.89903)
+
+[node name="StaticBody2D10" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
+position = Vector2(-248, -374)
+rotation = 1.5708
+scale = Vector2(0.114175, 1.32596)
+
+[node name="StaticBody2D11" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
+position = Vector2(-489, -505)
+rotation = 1.5708
+scale = Vector2(0.345744, 0.894967)
+
+[node name="StaticBody2D12" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
+position = Vector2(-620, -6.00001)
+rotation = 1.5708
+scale = Vector2(0.0459816, 3.38984)
+
+[editable path="Igralec"]

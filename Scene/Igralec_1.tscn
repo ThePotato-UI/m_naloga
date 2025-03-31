@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://ppw8sknillc"]
+
+[ext_resource type="Script" path="res://Koda/Player1.gd" id="1_e0mj2"]
+[ext_resource type="Texture2D" uid="uid://crqvnuhw3bcfn" path="res://Sprites/Tank1.png" id="2_8xmtc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n555e"]
+size = Vector2(74.0003, 84)
+
+[node name="Igralec" type="CharacterBody2D" groups=["igralec1"]]
+script = ExtResource("1_e0mj2")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.223529, 1, 1)
+position = Vector2(9.53674e-07, 0)
+rotation = 1.5708
+scale = Vector2(1.1709, 1.22445)
+texture = ExtResource("2_8xmtc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6.99986, -3)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_n555e")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(80, -1)
+
+[node name="Življenje" type="Area2D" parent="." groups=["Življenje 1"]]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Življenje"]
+polygon = PackedVector2Array(43, -42, 50, -41, 51, -34, 52, -19, 52, 11, 52, 29, 50, 35, 44, 35, -29, 35, -36, 35, -37, 28, -38, -35, -37, -41, -30, -42)
+
+[connection signal="area_entered" from="Življenje" to="." method="_on_življenje_area_entered"]

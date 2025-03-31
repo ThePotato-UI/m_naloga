@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dxynn2pw8nqvk"]
+
+[ext_resource type="Script" path="res://Koda/metek.gd" id="1_iu6d6"]
+[ext_resource type="Texture2D" uid="uid://chh6hi7gir1sb" path="res://Sprites/igralec1_Metek.png" id="2_0ikm7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_x5jx6"]
+radius = 59.765
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_glk1w"]
+radius = 74.1723
+
+[node name="Metek" type="CharacterBody2D"]
+scale = Vector2(0.215714, 0.252281)
+script = ExtResource("1_iu6d6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0.0352941, 1, 1)
+texture = ExtResource("2_0ikm7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("CircleShape2D_x5jx6")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Area2D" type="Area2D" parent="." groups=["METEK1"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["METEK1"]]
+shape = SubResource("CircleShape2D_glk1w")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
