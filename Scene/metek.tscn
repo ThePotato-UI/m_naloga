@@ -7,7 +7,7 @@
 radius = 59.765
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_glk1w"]
-radius = 74.1723
+radius = 60.265
 
 [node name="Metek" type="CharacterBody2D"]
 scale = Vector2(0.215714, 0.252281)

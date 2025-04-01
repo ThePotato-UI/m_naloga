@@ -6,6 +6,7 @@ var dir : float
 var pos : Vector2
 var rot : float
 
+
 func _ready() -> void:
 	global_position = pos
 	global_rotation = rot
@@ -22,8 +23,10 @@ func _physics_process(delta: float) -> void:
 			velocity = velocity.bounce(normal)  # Correctly update velocity
 			dir = velocity.angle()  # Update direction so it doesn't reset next frame
 		if collider.is_in_group("igralec1"):
+			Global.GotHit_Red = true
 			queue_free()
 		if collider.is_in_group("igralec2"):
+			Global.GotHit_Blue = true
 			queue_free()
 			
 func _on_timer_timeout() -> void:

@@ -1,20 +1,114 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2ckn7dojuwm2"]
+[gd_scene load_steps=7 format=3 uid="uid://d2ckn7dojuwm2"]
 
 [ext_resource type="Texture2D" uid="uid://bhelyjplx2rt1" path="res://Sprites/tla.png" id="1_my8g0"]
 [ext_resource type="PackedScene" uid="uid://ppw8sknillc" path="res://Scene/Igralec_1.tscn" id="2_6qekt"]
 [ext_resource type="PackedScene" uid="uid://bpj8qiboqjlfg" path="res://Scene/igralec_2.tscn" id="3_tyhq5"]
 [ext_resource type="PackedScene" uid="uid://c51sh4v5ceyuf" path="res://Scene/notranji_zid.tscn" id="4_h0syu"]
+[ext_resource type="PackedScene" uid="uid://buff3kexnh6mv" path="res://Scene/Respawn.tscn" id="5_036ls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pelps"]
 size = Vector2(1618, 40.25)
 
 [node name="Game" type="Node2D"]
 
-[node name="tla" type="Sprite2D" parent="."]
+[node name="Okolica" type="Node2D" parent="."]
+
+[node name="Tla in zidovi" type="Sprite2D" parent="Okolica"]
 modulate = Color(0.65834, 0.65834, 0.65834, 1)
-position = Vector2(2, 2)
+position = Vector2(1, 11)
 scale = Vector2(109.308, 80.1328)
 texture = ExtResource("1_my8g0")
+
+[node name="walls" type="Node" parent="Okolica/Tla in zidovi"]
+
+[node name="StaticBody2D2" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
+position = Vector2(519, 338)
+scale = Vector2(1.18676, 0.477894)
+
+[node name="StaticBody2D3" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
+position = Vector2(-298, 629)
+rotation = 1.5708
+scale = Vector2(1.18676, 0.477895)
+
+[node name="StaticBody2D4" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
+position = Vector2(-552, 254)
+rotation = -1.57079
+scale = Vector2(0.196144, -2.05476)
+
+[node name="StaticBody2D6" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
+position = Vector2(234, -208)
+rotation = 1.57079
+scale = Vector2(0.230566, 1.88695)
+
+[node name="StaticBody2D5" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
+position = Vector2(199.001, 97.0001)
+rotation = -1.57079
+scale = Vector2(0.136683, -5.17454)
+
+[node name="StaticBody2D7" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
+position = Vector2(561, -200)
+rotation = -1.57079
+scale = Vector2(0.169458, -1.90363)
+
+[node name="StaticBody2D8" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
+position = Vector2(-29, -565)
+rotation = -1.57079
+scale = Vector2(0.845986, -0.603949)
+
+[node name="StaticBody2D9" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
+position = Vector2(-345, -165)
+rotation = 1.5708
+scale = Vector2(0.0814269, 2.89903)
+
+[node name="StaticBody2D10" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
+position = Vector2(-249.001, -365)
+rotation = 1.5708
+scale = Vector2(0.114175, 1.32596)
+
+[node name="StaticBody2D11" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
+position = Vector2(-490, -496)
+rotation = 1.5708
+scale = Vector2(0.345744, 0.894967)
+
+[node name="StaticBody2D12" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
+position = Vector2(-621, 2.99999)
+rotation = 1.5708
+scale = Vector2(0.0459816, 3.38984)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Okolica/Tla in zidovi/walls" groups=["walls"]]
+position = Vector2(-0.999997, 9)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Okolica/Tla in zidovi/walls/StaticBody2D"]
+position = Vector2(-14, 554)
+shape = SubResource("RectangleShape2D_pelps")
+
+[node name="StaticBody2D13" type="StaticBody2D" parent="Okolica/Tla in zidovi/walls" groups=["walls"]]
+position = Vector2(-0.999997, 9)
+rotation = -3.14159
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Okolica/Tla in zidovi/walls/StaticBody2D13"]
+position = Vector2(-14, 554)
+shape = SubResource("RectangleShape2D_pelps")
+
+[node name="StaticBody2D14" type="StaticBody2D" parent="Okolica/Tla in zidovi/walls" groups=["walls"]]
+position = Vector2(-0.999997, 9)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Okolica/Tla in zidovi/walls/StaticBody2D14"]
+position = Vector2(-806, -18)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_pelps")
+
+[node name="StaticBody2D15" type="StaticBody2D" parent="Okolica/Tla in zidovi/walls" groups=["walls"]]
+position = Vector2(-0.999997, 9)
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Okolica/Tla in zidovi/walls/StaticBody2D15"]
+position = Vector2(808, -7)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_pelps")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(1, 2)
@@ -32,89 +126,6 @@ position = Vector2(703, 455)
 rotation = -1.5708
 scale = Vector2(0.806192, 0.854209)
 
-[node name="walls" type="Node" parent="."]
-
-[node name="StaticBody2D" type="StaticBody2D" parent="walls" groups=["walls"]]
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/StaticBody2D"]
-position = Vector2(-14, 554)
-shape = SubResource("RectangleShape2D_pelps")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="walls" groups=["walls"]]
-rotation = -3.14159
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="walls/StaticBody2D4"]
-position = Vector2(-14, 554)
-shape = SubResource("RectangleShape2D_pelps")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="walls" groups=["walls"]]
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="walls/StaticBody2D2"]
-position = Vector2(-806, -18)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_pelps")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="walls" groups=["walls"]]
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="walls/StaticBody2D3"]
-position = Vector2(808, -7)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_pelps")
-
-[node name="NotranjiZidovi" type="Node" parent="."]
-
-[node name="StaticBody2D2" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
-position = Vector2(520, 329)
-scale = Vector2(1.18676, 0.477894)
-
-[node name="StaticBody2D3" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
-position = Vector2(-297, 620)
-rotation = 1.5708
-scale = Vector2(1.18676, 0.477894)
-
-[node name="StaticBody2D4" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
-position = Vector2(-551, 245)
-rotation = 1.5708
-scale = Vector2(-0.196144, 2.05476)
-
-[node name="StaticBody2D6" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
-position = Vector2(235, -217)
-rotation = -1.5708
-scale = Vector2(-0.230566, -1.88695)
-
-[node name="StaticBody2D5" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
-position = Vector2(200, 88)
-rotation = 1.5708
-scale = Vector2(-0.136683, 5.17454)
-
-[node name="StaticBody2D7" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
-position = Vector2(562, -209)
-rotation = 1.5708
-scale = Vector2(-0.169458, 1.90363)
-
-[node name="StaticBody2D8" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
-position = Vector2(-28, -574)
-rotation = 1.5708
-scale = Vector2(-0.845987, 0.603948)
-
-[node name="StaticBody2D9" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
-position = Vector2(-344, -174)
-rotation = 1.5708
-scale = Vector2(0.0814273, 2.89903)
-
-[node name="StaticBody2D10" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
-position = Vector2(-248, -374)
-rotation = 1.5708
-scale = Vector2(0.114175, 1.32596)
-
-[node name="StaticBody2D11" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
-position = Vector2(-489, -505)
-rotation = 1.5708
-scale = Vector2(0.345744, 0.894967)
-
-[node name="StaticBody2D12" parent="NotranjiZidovi" instance=ExtResource("4_h0syu")]
-position = Vector2(-620, -6.00001)
-rotation = 1.5708
-scale = Vector2(0.0459816, 3.38984)
+[node name="Respawn" parent="." instance=ExtResource("5_036ls")]
 
 [editable path="Igralec"]
