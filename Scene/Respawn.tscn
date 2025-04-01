@@ -4,3 +4,20 @@
 
 [node name="Respawn" type="Node2D"]
 script = ExtResource("1_0o34g")
+
+[node name="Bottom_Right" type="Node2D" parent="."]
+
+[node name="Bottom_Left" type="Node2D" parent="."]
+
+[node name="Top_Right" type="Node2D" parent="."]
+
+[node name="Top_Left" type="Node2D" parent="."]
+
+[node name="RED_T" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="BLUE_T" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="RED_T" to="." method="_on_red_t_timeout"]
+[connection signal="timeout" from="BLUE_T" to="." method="_on_blue_t_timeout"]

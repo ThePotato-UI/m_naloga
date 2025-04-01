@@ -119,13 +119,24 @@ limit_right = 786
 [node name="igralec2" parent="." instance=ExtResource("3_tyhq5")]
 position = Vector2(-686, -459)
 rotation = 1.5708
-scale = Vector2(0.992, 1)
 
 [node name="Igralec" parent="." instance=ExtResource("2_6qekt")]
 position = Vector2(703, 455)
 rotation = -1.5708
-scale = Vector2(0.806192, 0.854209)
 
 [node name="Respawn" parent="." instance=ExtResource("5_036ls")]
 
+[node name="Bottom_Right" parent="Respawn" index="0"]
+position = Vector2(702, 445)
+
+[node name="Bottom_Left" parent="Respawn" index="1"]
+position = Vector2(-711, 469)
+
+[node name="Top_Right" parent="Respawn" index="2"]
+position = Vector2(664, -423)
+
+[node name="Top_Left" parent="Respawn" index="3"]
+position = Vector2(-687, -457)
+
 [editable path="Igralec"]
+[editable path="Respawn"]

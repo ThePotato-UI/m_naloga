@@ -46,11 +46,3 @@ func Streljaj():
 	metekP.pos = $Node2D.global_position
 	metekP.rot = global_rotation
 	main.get_parent().add_child(metekP)	
-
-
-#func _on_življenje_area_entered(area: Area2D) -> void:
-#	if area.is_in_group("METEK1"):
-#		GOTHIT = true
-#	if area.is_in_group("METEK2"):
-#		print("hit")
-#		GOTHIT = true

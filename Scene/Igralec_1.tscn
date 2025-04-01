@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://crqvnuhw3bcfn" path="res://Sprites/Tank1.png" id="2_8xmtc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n555e"]
-size = Vector2(74.0003, 84)
+size = Vector2(60, 66.0002)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0gipd"]
-size = Vector2(84, 74)
+size = Vector2(66, 60)
 
 [node name="Igralec" type="CharacterBody2D" groups=["igralec1"]]
 script = ExtResource("1_e0mj2")
@@ -16,11 +16,10 @@ script = ExtResource("1_e0mj2")
 modulate = Color(1, 0.223529, 1, 1)
 position = Vector2(9.53674e-07, 0)
 rotation = 1.5708
-scale = Vector2(1.1709, 1.22445)
 texture = ExtResource("2_8xmtc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6.99986, -3)
+position = Vector2(6, -3.00012)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_n555e")
 
@@ -30,7 +29,7 @@ position = Vector2(80, -1)
 [node name="Življenje" type="Area2D" parent="." groups=["Življenje 1"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Življenje"]
-position = Vector2(7, -3)
+position = Vector2(6, -3)
 shape = SubResource("RectangleShape2D_0gipd")
 
 [connection signal="area_entered" from="Življenje" to="." method="_on_življenje_area_entered"]
