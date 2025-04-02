@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2ckn7dojuwm2"]
+[gd_scene load_steps=8 format=3 uid="uid://d2ckn7dojuwm2"]
 
 [ext_resource type="Texture2D" uid="uid://bhelyjplx2rt1" path="res://Sprites/tla.png" id="1_my8g0"]
 [ext_resource type="PackedScene" uid="uid://ppw8sknillc" path="res://Scene/Igralec_1.tscn" id="2_6qekt"]
 [ext_resource type="PackedScene" uid="uid://bpj8qiboqjlfg" path="res://Scene/igralec_2.tscn" id="3_tyhq5"]
 [ext_resource type="PackedScene" uid="uid://c51sh4v5ceyuf" path="res://Scene/notranji_zid.tscn" id="4_h0syu"]
 [ext_resource type="PackedScene" uid="uid://buff3kexnh6mv" path="res://Scene/Respawn.tscn" id="5_036ls"]
+[ext_resource type="Script" path="res://Scene/manager.gd" id="6_wjdg4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pelps"]
 size = Vector2(1618, 40.25)
@@ -77,7 +78,6 @@ scale = Vector2(0.0459816, 3.38984)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Okolica/Tla in zidovi/walls" groups=["walls"]]
 position = Vector2(-0.999997, 9)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Okolica/Tla in zidovi/walls/StaticBody2D"]
 position = Vector2(-14, 554)
@@ -86,7 +86,6 @@ shape = SubResource("RectangleShape2D_pelps")
 [node name="StaticBody2D13" type="StaticBody2D" parent="Okolica/Tla in zidovi/walls" groups=["walls"]]
 position = Vector2(-0.999997, 9)
 rotation = -3.14159
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Okolica/Tla in zidovi/walls/StaticBody2D13"]
 position = Vector2(-14, 554)
@@ -94,7 +93,6 @@ shape = SubResource("RectangleShape2D_pelps")
 
 [node name="StaticBody2D14" type="StaticBody2D" parent="Okolica/Tla in zidovi/walls" groups=["walls"]]
 position = Vector2(-0.999997, 9)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Okolica/Tla in zidovi/walls/StaticBody2D14"]
 position = Vector2(-806, -18)
@@ -103,12 +101,38 @@ shape = SubResource("RectangleShape2D_pelps")
 
 [node name="StaticBody2D15" type="StaticBody2D" parent="Okolica/Tla in zidovi/walls" groups=["walls"]]
 position = Vector2(-0.999997, 9)
-scale = Vector2(1, 1)
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Okolica/Tla in zidovi/walls/StaticBody2D15"]
 position = Vector2(808, -7)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_pelps")
+
+[node name="točke" type="StaticBody2D" parent="."]
+scale = Vector2(4.82805, 4.23581)
+
+[node name="Točke_B" type="RichTextLabel" parent="točke"]
+modulate = Color(0.919554, 0.287348, 0, 1)
+offset_left = 132.559
+offset_top = -124.415
+offset_right = 167.559
+offset_bottom = -99.4153
+text = "0"
+
+[node name="Točke_R" type="RichTextLabel" parent="točke"]
+modulate = Color(0.19154, 0.294166, 0.790536, 1)
+offset_left = 81.6064
+offset_top = -123.707
+offset_right = 114.606
+offset_bottom = -97.7071
+text = "0"
+
+[node name="_" type="RichTextLabel" parent="točke"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 111.018
+offset_top = -123.707
+offset_right = 144.018
+offset_bottom = -97.7071
+text = ":"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(1, 2)
@@ -137,6 +161,9 @@ position = Vector2(664, -423)
 
 [node name="Top_Left" parent="Respawn" index="3"]
 position = Vector2(-687, -457)
+
+[node name="Manager" type="Node" parent="."]
+script = ExtResource("6_wjdg4")
 
 [editable path="Igralec"]
 [editable path="Respawn"]

@@ -24,8 +24,8 @@ func Health():
 		Global.GotHit_Blue = false
 	if healthbar == 0:
 		print("BLUE is dead")
-		Global.BLUE_HD = true
 		queue_free()
+		Global.BLUE_HD = true
 
 func _physics_process(delta):
 	Health()

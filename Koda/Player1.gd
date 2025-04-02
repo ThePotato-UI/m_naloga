@@ -36,8 +36,8 @@ func Health():
 		Global.GotHit_Red = false
 	if healthbar == 0:
 		print("RED is dead")
-		Global.RED_HD = true
 		queue_free()
+		Global.RED_HD = true
 	
 		
 func Streljaj():

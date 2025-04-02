@@ -15,13 +15,17 @@ var Player_Blue = preload("res://Scene/igralec_2.tscn")
 
 func _physics_process(delta: float) -> void:
 	if Global.RED_HD:
-		print("Respawning RED!")
-		$RED_T.start()
+		Respawn_RED()
 		Global.RED_HD = false
+		Global.Points_B += 1
+		print("Respawning RED! ", + Global.Points_R)
+
 	if Global.BLUE_HD:
-		print("Respawning BLUE!")
-		$BLUE_T.start()
+		Respawn_BLUE()
 		Global.BLUE_HD = false
+		Global.Points_R += 1
+		print("Respawning BLUE! ", + Global.Points_B)
+
 
 func Respawn_RED():
 	var P_RED = Player_Red.instantiate()
@@ -34,11 +38,3 @@ func Respawn_BLUE():
 	var Spawn_B = spawn_points[randi() % spawn_points.size()]
 	P_BLUE.position = Spawn_B.position
 	main.get_parent().add_child(P_BLUE)
-
-
-func _on_red_t_timeout() -> void:
-	Respawn_RED()
-
-
-func _on_blue_t_timeout() -> void:
-	Respawn_BLUE()
