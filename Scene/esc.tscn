@@ -1,0 +1,56 @@
+[gd_scene load_steps=3 format=3 uid="uid://dthhc6lge31x8"]
+
+[ext_resource type="Script" path="res://Scene/esc.gd" id="1_22emy"]
+[ext_resource type="Texture2D" uid="uid://bhelyjplx2rt1" path="res://Sprites/tla.png" id="2_ov5un"]
+
+[node name="ESC" type="StaticBody2D"]
+scale = Vector2(6.97309, 3.0065)
+script = ExtResource("1_22emy")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = 2
+offset_right = 60.0
+offset_bottom = 26.0
+scale = Vector2(0.897832, 1.33345)
+text = "Paused"
+fit_content = true
+scroll_active = false
+scroll_following = true
+metadata/_edit_use_anchors_ = true
+
+[node name="RESUME" type="StaticBody2D" parent="."]
+z_index = 2
+
+[node name="RESUME" type="Button" parent="RESUME"]
+modulate = Color(36.216, 1, 33.514, 1)
+z_index = 2
+offset_left = -8.89132
+offset_top = 52.5527
+offset_right = 63.1087
+offset_bottom = 83.5527
+text = "RESUME"
+metadata/_edit_use_anchors_ = true
+
+[node name="QUIT" type="StaticBody2D" parent="."]
+z_index = 2
+
+[node name="QUIT" type="Button" parent="QUIT"]
+modulate = Color(21.081, 60.541, 1, 1)
+z_index = 2
+offset_left = -2.00772
+offset_top = 103.442
+offset_right = 55.9923
+offset_bottom = 134.442
+text = "QUIT"
+metadata/_edit_use_anchors_ = true
+
+[node name="Ozadje" type="Sprite2D" parent="."]
+modulate = Color(0.0846899, 0.0846899, 0.0846899, 1)
+z_index = 1
+position = Vector2(32.5537, 74.5051)
+scale = Vector2(16.2439, 16.6505)
+texture = ExtResource("2_ov5un")
+
+[connection signal="pressed" from="RESUME/RESUME" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="RESUME/RESUME" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="QUIT/QUIT" to="." method="_on_quit_pressed"]

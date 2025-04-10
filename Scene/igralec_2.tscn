@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpj8qiboqjlfg"]
+[gd_scene load_steps=6 format=3 uid="uid://bpj8qiboqjlfg"]
 
 [ext_resource type="Texture2D" uid="uid://cyms0w6eog60w" path="res://Sprites/Tank2.png" id="1_00tf8"]
 [ext_resource type="Script" path="res://Koda/igralec_2.gd" id="1_yau77"]
+[ext_resource type="PackedScene" uid="uid://65waby15epty" path="res://Scene/health_bar.tscn" id="3_t4jqq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hkj2d"]
 size = Vector2(65, 61)
@@ -29,4 +30,21 @@ position = Vector2(70, -3)
 position = Vector2(6.5, -3.5)
 shape = SubResource("RectangleShape2D_drhgt")
 
+[node name="HealthBar_P2" parent="." instance=ExtResource("3_t4jqq")]
+z_index = 1
+position = Vector2(-46, -4)
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+
+[node name="end_health" parent="HealthBar_P2" index="0"]
+texture = ExtResource("1_00tf8")
+
+[node name="mid_health" parent="HealthBar_P2" index="1"]
+texture = ExtResource("1_00tf8")
+
+[node name="full_health" parent="HealthBar_P2" index="2"]
+texture = ExtResource("1_00tf8")
+
 [connection signal="area_entered" from="Življenje2" to="." method="_on_življenje_2_area_entered"]
+
+[editable path="HealthBar_P2"]

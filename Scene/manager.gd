@@ -8,3 +8,4 @@ func _physics_process(delta: float) -> void:
 	
 	var tekst_B = str(navaden_Tekst, str(Global.Points_B))
 	$"../točke/Točke_R".text = (tekst_B)
+	

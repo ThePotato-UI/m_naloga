@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://65waby15epty"]
+
+[ext_resource type="Texture2D" uid="uid://crqvnuhw3bcfn" path="res://Sprites/Tank1.png" id="1_a8rab"]
+
+[node name="HealthBar" type="Node2D"]
+
+[node name="end_health" type="Sprite2D" parent="."]
+position = Vector2(-77, 0)
+texture = ExtResource("1_a8rab")
+
+[node name="mid_health" type="Sprite2D" parent="."]
+texture = ExtResource("1_a8rab")
+
+[node name="full_health" type="Sprite2D" parent="."]
+position = Vector2(77, 0)
+texture = ExtResource("1_a8rab")

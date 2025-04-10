@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d2ckn7dojuwm2"]
+[gd_scene load_steps=9 format=3 uid="uid://d2ckn7dojuwm2"]
 
 [ext_resource type="Texture2D" uid="uid://bhelyjplx2rt1" path="res://Sprites/tla.png" id="1_my8g0"]
 [ext_resource type="PackedScene" uid="uid://ppw8sknillc" path="res://Scene/Igralec_1.tscn" id="2_6qekt"]
+[ext_resource type="PackedScene" uid="uid://dthhc6lge31x8" path="res://Scene/esc.tscn" id="3_3vojt"]
 [ext_resource type="PackedScene" uid="uid://bpj8qiboqjlfg" path="res://Scene/igralec_2.tscn" id="3_tyhq5"]
 [ext_resource type="PackedScene" uid="uid://c51sh4v5ceyuf" path="res://Scene/notranji_zid.tscn" id="4_h0syu"]
 [ext_resource type="PackedScene" uid="uid://buff3kexnh6mv" path="res://Scene/Respawn.tscn" id="5_036ls"]
@@ -11,6 +12,12 @@
 size = Vector2(1618, 40.25)
 
 [node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(1, 2)
+zoom = Vector2(0.735, 0.605)
+limit_left = 0
+limit_right = 786
 
 [node name="Okolica" type="Node2D" parent="."]
 
@@ -62,7 +69,7 @@ rotation = 1.5708
 scale = Vector2(0.0814269, 2.89903)
 
 [node name="StaticBody2D10" parent="Okolica/Tla in zidovi/walls" instance=ExtResource("4_h0syu")]
-position = Vector2(-249.001, -365)
+position = Vector2(-260, -374)
 rotation = 1.5708
 scale = Vector2(0.114175, 1.32596)
 
@@ -107,6 +114,34 @@ position = Vector2(808, -7)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_pelps")
 
+[node name="ESC" parent="." instance=ExtResource("3_3vojt")]
+z_index = 2
+position = Vector2(-290, -357)
+scale = Vector2(8.78523, 4.85198)
+
+[node name="RichTextLabel" parent="ESC" index="0"]
+offset_left = 5.00841
+offset_top = -2.26712
+offset_right = 68.0084
+offset_bottom = 23.7329
+text = "ODMOR"
+
+[node name="RESUME" parent="ESC" index="1"]
+position = Vector2(1.25211, -4.74034)
+
+[node name="RESUME" parent="ESC/RESUME" index="0"]
+text = "NADALJUJ"
+
+[node name="QUIT" parent="ESC" index="2"]
+position = Vector2(0.341486, 1.2366)
+
+[node name="QUIT" parent="ESC/QUIT" index="0"]
+offset_left = -6.82965
+offset_top = 104.906
+offset_right = 75.1703
+offset_bottom = 135.906
+text = "ODNEHAJ"
+
 [node name="točke" type="StaticBody2D" parent="."]
 scale = Vector2(4.82805, 4.23581)
 
@@ -134,12 +169,6 @@ offset_right = 144.018
 offset_bottom = -97.7071
 text = ":"
 
-[node name="Camera2D" type="Camera2D" parent="."]
-scale = Vector2(1, 2)
-zoom = Vector2(0.735, 0.605)
-limit_left = 0
-limit_right = 786
-
 [node name="igralec2" parent="." instance=ExtResource("3_tyhq5")]
 position = Vector2(-686, -459)
 rotation = 1.5708
@@ -165,5 +194,7 @@ position = Vector2(-687, -457)
 [node name="Manager" type="Node" parent="."]
 script = ExtResource("6_wjdg4")
 
+[editable path="ESC"]
 [editable path="Igralec"]
+[editable path="Igralec/HealthBar_P1"]
 [editable path="Respawn"]

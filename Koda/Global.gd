@@ -9,3 +9,5 @@ var BLUE_R = false
 
 var Points_R = 0
 var Points_B = 0
+
+var Is_paused = false

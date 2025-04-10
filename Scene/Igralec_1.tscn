@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ppw8sknillc"]
+[gd_scene load_steps=6 format=3 uid="uid://ppw8sknillc"]
 
 [ext_resource type="Script" path="res://Koda/Player1.gd" id="1_e0mj2"]
 [ext_resource type="Texture2D" uid="uid://crqvnuhw3bcfn" path="res://Sprites/Tank1.png" id="2_8xmtc"]
+[ext_resource type="PackedScene" uid="uid://65waby15epty" path="res://Scene/health_bar.tscn" id="3_6jw1y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n555e"]
 size = Vector2(60, 66.0002)
@@ -32,4 +33,21 @@ position = Vector2(80, -1)
 position = Vector2(6, -3)
 shape = SubResource("RectangleShape2D_0gipd")
 
+[node name="HealthBar_P1" parent="." instance=ExtResource("3_6jw1y")]
+z_index = 1
+position = Vector2(-46, -4)
+rotation = -1.5708
+scale = Vector2(0.3, 0.3)
+
+[node name="end_health" parent="HealthBar_P1" index="0"]
+modulate = Color(1, 0.223529, 1, 1)
+
+[node name="mid_health" parent="HealthBar_P1" index="1"]
+modulate = Color(1, 0.223529, 1, 1)
+
+[node name="full_health" parent="HealthBar_P1" index="2"]
+modulate = Color(1, 0.223529, 1, 1)
+
 [connection signal="area_entered" from="Življenje" to="." method="_on_življenje_area_entered"]
+
+[editable path="HealthBar_P1"]
