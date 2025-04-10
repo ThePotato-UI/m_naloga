@@ -24,7 +24,7 @@ position = Vector2(6, -3.00012)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_n555e")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Točka(x,y)" type="Node2D" parent="."]
 position = Vector2(80, -1)
 
 [node name="Življenje" type="Area2D" parent="." groups=["Življenje 1"]]

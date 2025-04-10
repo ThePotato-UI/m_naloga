@@ -21,7 +21,7 @@ texture = ExtResource("1_00tf8")
 position = Vector2(6.5, -3.5)
 shape = SubResource("RectangleShape2D_hkj2d")
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Točka(x,y)" type="Node2D" parent="."]
 position = Vector2(70, -3)
 
 [node name="Življenje2" type="Area2D" parent="." groups=["Življenje 2"]]
