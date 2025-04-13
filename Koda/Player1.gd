@@ -73,6 +73,6 @@ func Health():
 func Streljaj():
 	var metekP = metek.instantiate()
 	metekP.dir = rotation
-	metekP.pos = $Node2D.global_position
+	metekP.pos = $"Točka(x,y)".global_position
 	metekP.rot = global_rotation
 	main.get_parent().add_child(metekP)	
